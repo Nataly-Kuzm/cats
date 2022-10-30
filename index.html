@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кто сказал "мяу"</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" 
+  integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Prata&display=swap" rel="stylesheet">
+    <script src="func.js"></script>
+</head>
+<body>
+    <header>
+        <img class="header__logo" src='images/logo-min.png'>
+    <h1>Кто сказал "Мяу"</h1>
+    </header>
+    <nav class="dashboard">
+        <div class="btn" data-title="Добавить котика"><span class="icon" ><i class="fas fa-solid fa-cat"></i></span></div>
+        <div class="btn" data-title="Обновить" onclick="localStorage.removeItem('cats'); location.reload()"><span class="icon"><i class="fas fa-solid fa-paw"></i></span></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+        <div class="btn"></div>
+    </nav>
+    <main class="container">
+    
+    </main>
+    <div class="popup-wrapper">
+        <div class="popup" data-type="card">
+            <div class="close">+</div>
+            <div class="content">
+                <img src="#" class="pic">
+                <span class="id"></span>
+                <div class="title">
+                    <h2 class="name"></h2>
+                <button class="cat-favourite"><i class="fas fa-solid fa-heart fa-2x"></i></button>
+                </div>
+                <div class="age">
+                    <span class="age-val"></span>
+                    <span class="age-text"></span>
+                </div>
+                <span class="rate"></span>
+                <p class="description"></p>
+            </div>
+        </div>
+        <div class="popup" data-type="add">
+            <div class="close">+</div>
+            <div class="content">
+                <h2>Добавить кота</h2>
+                
+                <form id="add">
+                   
+                    <div class="row">
+                        <label for="i1">Имя котика</label>
+                        <input type="text" id="i1" name="name" required></div>
+                    <div class="row">
+                        <label for="i2">Порядковый номер</label>
+                        <input type="number" id="i2" name="id" required min="1">
+                    </div>
+                    <div class="row">
+                        <label for="i3">Ссылка на картинку</label>
+                        <input type="text" id="i3" name="img_link">
+                    </div>
+                    <div class="row">
+                        <label for="i4">Возраст</label>
+                        <input type="number" id="i4" name="age" min="0" max="100">
+                    </div>
+                    <div class="row">
+                        <label for="i5">Рейтинг</label>
+                        <input type="range" id="i5" name="rate" min="0" max="10" value="10">
+                    </div>
+                    <div class="row">
+                        <label for="i6">
+                            <input type="checkbox" id="i6" name="favourite">
+                            Любимчик
+                        </label>
+                    </div>
+                    <div class="row">
+                        <label for="i7">Описание</label>
+                        <textarea id="i7" name="description"></textarea>
+                    </div>
+                    <button type="submit">Добавить котика</button>
+                </form>
+            </div>
+        </div>
+        <div class="popup" data-type="info">
+            <div class="close">+</div>
+            <div class="content">
+                <h2>Внимание!</h2>
+            </div>
+        </div>
+    </div>
+    <script src="script.js" type="module"></script>
+</body>
+</html>
